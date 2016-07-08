@@ -1,9 +1,8 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using System.IO;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace aspnetcoredemo
 
@@ -13,7 +12,7 @@ namespace aspnetcoredemo
         public void Configure(IApplicationBuilder app)
         {
            var builder = new ConfigurationBuilder(); 
-           builder.SetBasePath(Directory.GetCurrentDirectory());
+           builder.SetBasePath(PlatformServices.Default.Application.ApplicationBasePath);
            builder.AddJsonFile("appsettings.json"); 
 
            var config = builder.Build();
