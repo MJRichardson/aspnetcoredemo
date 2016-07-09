@@ -5,7 +5,8 @@
   },
   "publishOptions": {
     "include": [
-      "appSettings.json"
+      "appSettings.json",
+      "..\\deployment\\*.conf"
     ]
   },
   "dependencies": {
